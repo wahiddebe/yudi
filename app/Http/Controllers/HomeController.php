@@ -46,6 +46,7 @@ class HomeController extends Controller
         $kategoryCount = $this->getKategoriCount();
         $kat = Kategory::pluck('name','id');
         return view('admin.home',compact('data','kat','grafik','kategoryCount','document'));
+
     }
 
  
@@ -61,7 +62,9 @@ class HomeController extends Controller
             $kategoryCount = $this->getKategoriCount();
         }
         
-        $kat = Kategory::pluck('name','id');
+        $kat = Kategory::get('name','id');
+       
+
         return view('welcome',compact('data','kat','kategoryCount'));
     }
 

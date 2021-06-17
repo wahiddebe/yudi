@@ -114,7 +114,7 @@ desired effect
           <li><a href="{{url('/')}}" target="_blank"><i class="fa fa-eye"></i> <span>Landing Page</span></a></li>
           <li class="{{Request::is('home')?'active':''}}"><a href="{{url('home')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
           <li class="{{Request::is('kategory')?'active':''}}"><a href="{{route('kategori')}}"><i class="fa fa-tags"></i> <span>Kategori</span></a></li>
-          <li class="{{Request::is('maps')?'active':''}}"><a href="{{url('maps')}}"><i class="fa fa-map"></i> <span>Maps</span></a></li>
+          <li class="{{Request::is('maps')?'active':''}}"><a href="{{route('maps')}}"><i class="fa fa-map"></i> <span>Maps</span></a></li>
           <li class="treeview {{Request::is('setting')?'active':''}}">
             <a href="#"><i class="fa fa-gear"></i> <span>Setting</span>
               <span class="pull-right-container">

@@ -6,7 +6,7 @@
     <div class="panel-heading">Kategori</div>
     <div class="panel-body">
 
-        <a href="{{ url('/kategory/create') }}" class="btn btn-primary btn-xs" title="Add New Kategory"><span
+        <a href="{{ route('kategori.create') }}" class="btn btn-primary btn-xs" title="Add New Kategory"><span
                 class="glyphicon glyphicon-plus" aria-hidden="true" /></a>
         <br />
         <br />
@@ -30,7 +30,7 @@
                             <img src="img/{{ $item->icon }}">
                             </td>
                         <td>
-                            <a href="{{ url('/kategory/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs"
+                            <a href="{{ route('kategori.edit' , $item->id ) }}" class="btn btn-primary btn-xs"
                                 title="Edit Kategory"><span class="glyphicon glyphicon-pencil" aria-hidden="true" /></a>
                            
                         </td>

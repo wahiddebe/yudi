@@ -121,12 +121,7 @@
         box-shadow: 0 1px 1px rgba(0,0,0,.05);
     }
 </style>
-<div class="filter-gmaps">
-    <form action="" method="GET" role="form" class="form-inline">
-       
-        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-    </form>
-</div>
+
 <div class="summary-gmaps">
     <div class="panel panel-primary">
         <div class="panel-heading">

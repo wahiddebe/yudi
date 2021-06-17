@@ -20,3 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/rute', 'RouteController@index')->name('route');
 Route::get('/Kategori', 'KategoriController@index')->name('kategori');
+Route::get('/Kategori/create', 'KategoriController@create')->name('kategori.create');
+Route::post('/Kategori/add', 'KategoriController@add')->name('kategori.add');
+Route::get('/Kategori/edit/{id}', 'KategoriController@edit')->name('kategori.edit');
+Route::get('/Kategori/update/{id}', 'KategoriController@update')->name('kategori.update');
+
+
+Route::get('/maps', 'MapsController@index')->name('maps');
+Route::get('/maps/create', 'MapsController@create')->name('maps.create');
