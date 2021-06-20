@@ -122,7 +122,7 @@ desired effect
               </span>
             </a>
             <ul class="treeview-menu">
-              <li class="{{Request::is('setting')?'active':''}}"><a href="{{url('setting')}}">Aplikasi</a></li>
+              <li class="{{Request::is('setting')?'active':''}}"><a href="{{route('aplikasi')}}">Aplikasi</a></li>
               
             </ul>
           </li>

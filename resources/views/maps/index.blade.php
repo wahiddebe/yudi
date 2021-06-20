@@ -22,9 +22,9 @@
                                     <!-- <td>{{ $item->id }}</td> -->
                                     <td>{{ $item->Kategori->name }}</td><td>{{ $item->title }}</td><td>{{ $item->description }}</td>
                                     <td>
-                                        <a href="{{ url('/maps/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit Map"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
+                                        <a href="{{ route('maps.edit' , $item->id ) }}" class="btn btn-primary btn-xs" title="Edit Map"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>
                                        
-                                            <form style="display: inline;" method="DELETE">
+                                            <form  action="{{route('maps.delete',$item->id)}}" style="display: inline;" method="DELETE">
                                             <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Confirm delete ?')"  ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </button>
                                             </form>
                                         </td>

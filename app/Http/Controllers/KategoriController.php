@@ -58,4 +58,13 @@ class KategoriController extends Controller
 
        return redirect(route('kategori'));
     }
+
+    public function delete($id)
+    {
+         Kategory::destroy($id);
+
+        Session::flash('flash_message', 'Kategory deleted!');
+
+       return redirect(route('kategori'));
+    }
 }

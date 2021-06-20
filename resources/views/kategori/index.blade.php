@@ -32,6 +32,9 @@
                         <td>
                             <a href="{{ route('kategori.edit' , $item->id ) }}" class="btn btn-primary btn-xs"
                                 title="Edit Kategory"><span class="glyphicon glyphicon-pencil" aria-hidden="true" /></a>
+                                    <form  action="{{route('kategori.delete',$item->id)}}" style="display: inline;" method="DELETE">
+                                            <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Confirm delete ?')"  ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </button>
+                                            </form>
                            
                         </td>
                     </tr>

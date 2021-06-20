@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="panel panel-default">
-    <div class="panel-heading">Create New Map</div>
+    <div class="panel-heading">Edit Map {{ $map->id }}</div>
     <div class="panel-body">
 
         @if ($errors->any())
@@ -14,8 +14,8 @@
         </ul>
         @endif
 
-        <form method="post" action="{{route('maps.add')}}" class="form-horizontal">
-        	   @csrf
+        <form method="get" action="{{route('maps.update',$map->id)}}"  class="form-horizontal">
+        	 @csrf
 
         	<div class="row">
     <div class="col-md-6">
@@ -24,11 +24,11 @@
         	
             <div class="col-md-10">
               
-        <select class="form-control" name="kategory_id">
+        <select class="form-control" name="icon">
 
-            <option>Select Kategori</option>
+            <option value="{{$map->kategory_id}}" >{{$kat->name }}</option>
               @foreach ($data as $item)
-            <option value="{{$item->id}}">{{$item->name}}</option>
+            <option value="icon_masjid.png">{{$item->name}}</option>
               @endforeach
          
 
@@ -40,14 +40,14 @@
         <label class="control-label">Tittle</label>
         <div class="form-group {{ $errors->has('title') ? 'has-error' : ''}}">
             <div class="col-md-10">
-<input type="text" name="title" class="form-control" required>
+<input type="text" name="title" value="{{$map->title}}" class="form-control" required>
                 {!! $errors->first('title', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
         <label class="control-label">Description</label>
         <div class="form-group {{ $errors->has('description') ? 'has-error' : ''}}">
             <div class="col-md-10">
-<textarea class="form-control" name="description">Description</textarea>
+<textarea class="form-control" name="description">{{$map->description}}</textarea>
                 {!! $errors->first('description', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
@@ -55,7 +55,7 @@
 <label class="control-label">Lat</label>
         <div class="form-group {{ $errors->has('lat') ? 'has-error' : ''}}">
             <div class="col-md-10">
-<input type="text" name="lat" class="form-control" id="lat">
+<input type="text" name="lat" class="form-control" value="{{$map->lat}}" id="lat">
                 {!! $errors->first('lat', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
@@ -63,7 +63,7 @@
         <div class="form-group {{ $errors->has('long') ? 'has-error' : ''}}">
            
             <div class="col-md-10">
- <input type="text" name="long" class="form-control" id="long">
+ <input type="text" name="long" class="form-control" value="{{$map->long}}" id="long">
              
                 {!! $errors->first('long', '<p class="help-block">:message</p>') !!}
             </div>
@@ -80,7 +80,7 @@
 <div class="form-group">
     <div class=" col-md-4">
         <a class=" btn btn-default" href="{{route('maps')}}" role="button">Back</a>
-<button class="  btn btn-success" type="submit" >Create</button>
+<button class="  btn btn-warning" type="submit" >Update</button>
     </div>
 </div>
 
@@ -130,6 +130,8 @@
         </form>
       
 
-    </div>
+
 </div>
+</div>
+
   @endsection
