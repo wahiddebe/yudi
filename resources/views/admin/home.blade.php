@@ -4,14 +4,14 @@
 
 <style type="text/css">
     .no-padding {
-     padding: 0px; 
- }
+        padding: 0px;
+    }
 </style>
 <div class="row">
     <div class="col-md-6">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">chart_marker</h3>
+                <h3 class="panel-title">chart of markers</h3>
             </div>
             <div class="panel-body">
                 <canvas id="myChart" width="400" height="200"></canvas>
@@ -21,7 +21,7 @@
     <div class="col-md-6">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">summary_category</h3>
+                <h3 class="panel-title">summary of markers</h3>
             </div>
             <div class="panel-body">
                 <table class="table table-striped table-hover">
@@ -56,8 +56,8 @@
     <div class="panel-heading">Maps</div>
 
     <div class="panel-body no-padding">
-       <div id="map"></div>
-   </div>
+        <div id="map"></div>
+    </div>
 </div>
 @endsection
 
@@ -91,7 +91,6 @@
         data: {
             labels: {!!$grafik['labels']!!},
             datasets: [{
-                label: '# of Kategori',
                 data: {{$grafik['data']}},
                 backgroundColor: {!!$grafik['backgroundColor']!!},
                 borderColor: {!!$grafik['backgroundColor']!!},
@@ -105,6 +104,9 @@
                         beginAtZero:true
                     }
                 }]
+            },
+            legend:{
+                display:false
             }
         }
     });

@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/ab2155e76b.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="{{ asset('route/App.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -17,6 +18,53 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
+    <style type="text/css">
+        #map {
+
+            width: 100%;
+            height: 100vh;
+        }
+
+        .cari {
+            position: absolute;
+            z-index: 1000;
+            top: 53px;
+            left: 200px;
+        }
+
+        .text-navbar {
+            font-family: 'Roboto';
+            font-size: medium;
+
+        }
+
+        /* Small devices (tablets, 768px and up) */
+        @media (max-width: 360px) {
+            .cari {
+                position: absolute;
+                z-index: 1000;
+                top: 120px;
+                left: 26px;
+            }
+        }
+
+        .gmaps {
+            position: absolute;
+            z-index: 999;
+            margin: 13px;
+            right: 50px;
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #ffffffc9;
+            border: 1px solid #999;
+            border: 1px solid rgba(0, 0, 0, .2);
+            border-radius: 6px;
+            box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+            outline: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,28 +77,32 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link text-navbar" href="{{route('route')}}">Rute</a>
+                <li class="nav-item">
+                    <a class="nav-link text-navbar" href="/">Home</a>
                 </li>
                 <li class="nav-item active">
+                    <a class="nav-link text-navbar" href="{{route('route')}}">Directions</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link text-navbar" data-toggle="modal" href='#modal-id'>Login</a>
                 </li>
             </ul>
         </div>
-        <div class="modal fade" id="modal-id">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Login</h4>
-                    </div>
-                    <div class="modal-body">
-                        @include('auth.partial_login')
-                    </div>
+    </nav>
+    <div class="modal fade" id="modal-id">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close m-3 align-self-lg-start " data-dismiss="modal"
+                    aria-hidden="true">&times;</button>
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                </div>
+                <div class="modal-body">
+                    @include('auth.partial_login')
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
 
 
     <div class="jumbotron">
@@ -176,15 +228,15 @@
         }
 
         //create autocomplete objects for all inputs
-        var options = {
-        types: ["(cities)"],
-        };
+        // var options = {
+        // types: ["(cities)"],
+        // };
 
-        var input1 = document.getElementById("from");
-        var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+        // var input1 = document.getElementById("from");
+        // var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
 
-        var input2 = document.getElementById("to");
-        var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
+        // var input2 = document.getElementById("to");
+        // var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
     </script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
