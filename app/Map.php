@@ -14,10 +14,10 @@ class Map extends Model
     protected $table = 'maps';
 
     /**
-    * The database primary key value.
-    *
-    * @var string
-    */
+     * The database primary key value.
+     *
+     * @var string
+     */
     protected $primaryKey = 'id';
 
     /**
@@ -25,12 +25,11 @@ class Map extends Model
      *
      * @var array
      */
-    protected $fillable = ['kategory_id','title', 'description', 'lat', 'long', 'upload'];
+    protected $fillable = ['kategory_id', 'title', 'description', 'address', 'location', 'contact', 'email', 'lat', 'long', 'upload'];
 
 
     public function Kategori()
     {
         return $this->belongsTo('App\Kategory', 'kategory_id', 'id');
     }
-    
 }

@@ -17,6 +17,10 @@
                         <th> Kategory </th>
                         <th> Title </th>
                         <th> Description </th>
+                        <th> Address </th>
+                        <th> Location </th>
+                        <th> Contact </th>
+                        <th> Email </th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -27,6 +31,10 @@
                         <td>{{ $item->Kategori->name }}</td>
                         <td>{{ $item->title }}</td>
                         <td>{{ $item->description }}</td>
+                        <td>{{ $item->address }}</td>
+                        <td>{{ $item->location }}</td>
+                        <td>{{ $item->contact }}</td>
+                        <td>{{ $item->email }}</td>
                         <td>
                             <a href="{{ route('maps.edit' , $item->id ) }}" class="btn btn-primary btn-xs"
                                 title="Edit Map"><span class="glyphicon glyphicon-pencil" aria-hidden="true" /></a>
