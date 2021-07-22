@@ -145,7 +145,13 @@
                 box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
             }
         </style>
+         <div class="jumbotron">
+<div class="text-center mb-4">
+    <p style="font-size: 35px;
+    font-weight: 700;
+    color: #4a4a44;">Selamat Datang Di Website GIS Kota Semarang</p>
 
+</div>
         <div class="summary-gmaps">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -180,7 +186,7 @@
 
 
         @push('js')
-
+</div>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
